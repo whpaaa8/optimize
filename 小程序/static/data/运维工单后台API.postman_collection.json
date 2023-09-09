@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "21bbf6bf-213c-44eb-b5dc-819060f8101a",
+		"name": "运维工单后台API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "用户注册",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/register?username=19128316753&password=123456&uname=张三",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"register"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "19128316753",
+							"description": "账号（手机号）"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "密码"
+						},
+						{
+							"key": "uname",
+							"value": "张三",
+							"description": "用户名（人名）"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户登录",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/user/login?username=19128316753&password=123456",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "19128316753",
+							"description": "账号"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"description": "密码"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "添加工单记录",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "root",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "123456",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "jobNumber",
+							"value": "15602820850（工信部）",
+							"description": "工单号  (必填)",
+							"type": "text"
+						},
+						{
+							"key": "associateNumber",
+							"value": "JW0508001",
+							"description": "关联工单号(必填)",
+							"type": "text"
+						},
+						{
+							"key": "handler",
+							"value": "唐兵",
+							"description": "处理人(必填)",
+							"type": "text"
+						},
+						{
+							"key": "complaintType",
+							"value": "VOLTE",
+							"description": "投诉类型(必填)",
+							"type": "text"
+						},
+						{
+							"key": "jobType",
+							"value": "工信预处理",
+							"description": "工单类型(必填)",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2022-10-07 19:01:56",
+							"description": "处理日期(必填)",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "广东省/中山市/中山市/沙溪镇",
+							"description": "地址(必填)",
+							"type": "text"
+						},
+						{
+							"key": "images",
+							"description": "相关图片(必填)",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "testResult",
+							"description": "掌上优测试截图(必填)",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "sign",
+							"value": "TRUE",
+							"description": "是否有联通信号(必填)",
+							"type": "text"
+						},
+						{
+							"key": "position",
+							"description": "问题定位图",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "reason",
+							"value": "现场测试信号正常，判断为用户终端问题",
+							"description": "投诉原因(必填)",
+							"type": "text"
+						},
+						{
+							"key": "soluType",
+							"value": "建议用户更换终端\n",
+							"description": "方案类型(必填)",
+							"type": "text"
+						},
+						{
+							"key": "testReport",
+							"description": "测试报告/测试需求",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "isSolve",
+							"value": "TRUE",
+							"description": "是否解决(必填)",
+							"type": "text"
+						},
+						{
+							"key": "desc",
+							"description": "解决截图说明",
+							"type": "file",
+							"src": []
+						},
+						{
+							"key": "remarks",
+							"value": "备注",
+							"description": "备注",
+							"type": "text"
+						},
+						{
+							"key": "lon",
+							"value": "113.302270",
+							"description": "经度(六位小数)",
+							"type": "text"
+						},
+						{
+							"key": "lat",
+							"value": "22.530880",
+							"description": "纬度(六位小数)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/collection/add/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"collection",
+						"add",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
